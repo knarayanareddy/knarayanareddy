@@ -1,13 +1,13 @@
 {
-  "generated": "2026-11-07",
-  "window_days": 371,
-  "total_contributions": 4781,
-  "commits": 4123,
-  "pull_requests": 558,
+  "generated": "2026-11-08",
+  "window_days": 365,
+  "total_contributions": 4857,
+  "commits": 4179,
+  "pull_requests": 578,
   "issues": 0,
   "repos_contributed": 131,
-  "current_streak": 47,
-  "longest_streak": 47,
+  "current_streak": 48,
+  "longest_streak": 48,
   "best_day": {
     "date": "2026-03-08",
     "count": 279
@@ -17,9 +17,9 @@
     575,
     775,
     517,
-    689,
-    647,
-    788
+    678,
+    709,
+    813
   ],
   "hours": [
     2,
@@ -29,31 +29,30 @@
     12,
     2,
     1,
-    5,
-    26,
-    13,
-    22,
-    14,
-    33,
-    50,
-    51,
-    38,
-    31,
-    24,
-    16,
-    12,
-    18,
-    56,
+    11,
+    29,
+    23,
     35,
+    19,
+    43,
+    68,
+    67,
+    37,
+    34,
+    31,
+    21,
+    37,
+    21,
+    64,
+    44,
     9
   ],
   "hour_sample": {
-    "commits": 476,
+    "commits": 616,
     "days": 120,
     "repos": 14
   },
   "weeks": [
-    0,
     0,
     0,
     0,
@@ -105,37 +104,10 @@
     200,
     250,
     415,
-    643
+    694,
+    25
   ],
   "calendar": [
-    {
-      "date": "2025-11-02",
-      "count": 0
-    },
-    {
-      "date": "2025-11-03",
-      "count": 0
-    },
-    {
-      "date": "2025-11-04",
-      "count": 0
-    },
-    {
-      "date": "2025-11-05",
-      "count": 0
-    },
-    {
-      "date": "2025-11-06",
-      "count": 0
-    },
-    {
-      "date": "2025-11-07",
-      "count": 0
-    },
-    {
-      "date": "2025-11-08",
-      "count": 0
-    },
     {
       "date": "2025-11-09",
       "count": 0
@@ -1586,11 +1558,15 @@
     },
     {
       "date": "2026-11-06",
-      "count": 48
+      "count": 37
     },
     {
       "date": "2026-11-07",
-      "count": 11
+      "count": 73
+    },
+    {
+      "date": "2026-11-08",
+      "count": 25
     }
   ],
   "languages": [
