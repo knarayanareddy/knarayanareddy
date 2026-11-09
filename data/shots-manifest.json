@@ -27,6 +27,22 @@
       "pushed": "2026-10-07"
     },
     {
+      "repo": "toolscour",
+      "url": "https://knarayanareddy.github.io/toolscour/",
+      "status": "ok",
+      "ok": true,
+      "bytes": 125867,
+      "pushed": "2026-11-08"
+    },
+    {
+      "repo": "AI-Daily",
+      "url": "https://knarayanareddy.github.io/AI-Daily/",
+      "status": "ok",
+      "ok": true,
+      "bytes": 71751,
+      "pushed": "2026-11-08"
+    },
+    {
       "repo": "hack-for-good",
       "url": "https://knarayanareddy.github.io/hack-for-good/",
       "status": "ok",
@@ -41,22 +57,6 @@
       "ok": true,
       "bytes": 182073,
       "pushed": "2026-11-08"
-    },
-    {
-      "repo": "toolscour",
-      "url": "https://knarayanareddy.github.io/toolscour/",
-      "status": "ok",
-      "ok": true,
-      "bytes": 124683,
-      "pushed": "2026-11-07"
-    },
-    {
-      "repo": "AI-Daily",
-      "url": "https://knarayanareddy.github.io/AI-Daily/",
-      "status": "ok",
-      "ok": true,
-      "bytes": 71751,
-      "pushed": "2026-11-07"
     },
     {
       "repo": "AI-Arsenal",
