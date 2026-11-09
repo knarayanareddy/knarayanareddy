@@ -39,6 +39,24 @@
   ],
   "sites": [
     {
+      "repo": "toolscour",
+      "url": "https://knarayanareddy.github.io/toolscour/",
+      "pages": true,
+      "lang": "JavaScript",
+      "stars": 1,
+      "pushed": "2026-11-08",
+      "blurb": "3D knowledge galaxy and stack architect over 11,000+ open-source AI tools, models, runtimes and skill packs"
+    },
+    {
+      "repo": "AI-Daily",
+      "url": "https://knarayanareddy.github.io/AI-Daily/",
+      "pages": true,
+      "lang": "JavaScript",
+      "stars": 1,
+      "pushed": "2026-11-08",
+      "blurb": "A calm, curated daily briefing for the AI ecosystem, built on a Scout → Challenge → Agree editorial model"
+    },
+    {
       "repo": "hack-for-good",
       "url": "https://knarayanareddy.github.io/hack-for-good/",
       "pages": true,
@@ -55,24 +73,6 @@
       "stars": 0,
       "pushed": "2026-11-08",
       "blurb": "ACAPS Ground Truth — Ninety-second expert elicitation on ACAPS risk statements, with intervals and a dissent loop."
-    },
-    {
-      "repo": "toolscour",
-      "url": "https://knarayanareddy.github.io/toolscour/",
-      "pages": true,
-      "lang": "JavaScript",
-      "stars": 1,
-      "pushed": "2026-11-07",
-      "blurb": "3D knowledge galaxy and stack architect over 11,000+ open-source AI tools, models, runtimes and skill packs"
-    },
-    {
-      "repo": "AI-Daily",
-      "url": "https://knarayanareddy.github.io/AI-Daily/",
-      "pages": true,
-      "lang": "JavaScript",
-      "stars": 1,
-      "pushed": "2026-11-07",
-      "blurb": "A calm, curated daily briefing for the AI ecosystem, built on a Scout → Challenge → Agree editorial model"
     },
     {
       "repo": "AI-Arsenal",
