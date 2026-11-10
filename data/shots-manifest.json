@@ -2,12 +2,12 @@
   "total": 40,
   "captured": 38,
   "missing": [
-    "Handy",
-    "SAAF-circuit-breaker"
+    "SAAF-circuit-breaker",
+    "Handy"
   ],
   "unavailable": {
-    "Handy": "http_404",
-    "SAAF-circuit-breaker": "blank"
+    "SAAF-circuit-breaker": "blank",
+    "Handy": "http_404"
   },
   "sites": [
     {
@@ -27,12 +27,20 @@
       "pushed": "2026-10-07"
     },
     {
+      "repo": "SAAF-circuit-breaker",
+      "url": "https://knarayanareddy.github.io/SAAF-circuit-breaker/",
+      "status": "blank",
+      "ok": false,
+      "bytes": 4714,
+      "pushed": "2026-11-10"
+    },
+    {
       "repo": "toolscour",
       "url": "https://knarayanareddy.github.io/toolscour/",
       "status": "ok",
       "ok": true,
-      "bytes": 125867,
-      "pushed": "2026-11-08"
+      "bytes": 125606,
+      "pushed": "2026-11-09"
     },
     {
       "repo": "AI-Daily",
@@ -40,7 +48,7 @@
       "status": "ok",
       "ok": true,
       "bytes": 71751,
-      "pushed": "2026-11-08"
+      "pushed": "2026-11-09"
     },
     {
       "repo": "hack-for-good",
@@ -248,14 +256,6 @@
       "status": "ok",
       "ok": true,
       "bytes": 91330,
-      "pushed": "2026-11-03"
-    },
-    {
-      "repo": "SAAF-circuit-breaker",
-      "url": "https://knarayanareddy.github.io/SAAF-circuit-breaker/",
-      "status": "blank",
-      "ok": false,
-      "bytes": 4714,
       "pushed": "2026-11-03"
     },
     {
