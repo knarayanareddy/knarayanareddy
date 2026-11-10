@@ -3,7 +3,7 @@
   "public_repos": 143,
   "generated": "2026-11-02 10:13 UTC",
   "repos": 138,
-  "stars": 112,
+  "stars": 113,
   "forks": 7,
   "site_count": 40,
   "pages_count": 38,
@@ -39,12 +39,21 @@
   ],
   "sites": [
     {
+      "repo": "SAAF-circuit-breaker",
+      "url": "https://knarayanareddy.github.io/SAAF-circuit-breaker/",
+      "pages": true,
+      "lang": "HTML",
+      "stars": 1,
+      "pushed": "2026-11-10",
+      "blurb": "Policy circuit breaker that quarantines drifting agents and restores a healthy checkpoint"
+    },
+    {
       "repo": "toolscour",
       "url": "https://knarayanareddy.github.io/toolscour/",
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-08",
+      "pushed": "2026-11-09",
       "blurb": "3D knowledge galaxy and stack architect over 11,000+ open-source AI tools, models, runtimes and skill packs"
     },
     {
@@ -53,7 +62,7 @@
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-08",
+      "pushed": "2026-11-09",
       "blurb": "A calm, curated daily briefing for the AI ecosystem, built on a Scout → Challenge → Agree editorial model"
     },
     {
@@ -289,15 +298,6 @@
       "stars": 1,
       "pushed": "2026-11-03",
       "blurb": "Solder-joint workmanship inspection with proof: OpenCV, Nemotron reasoning, sandbox branching"
-    },
-    {
-      "repo": "SAAF-circuit-breaker",
-      "url": "https://knarayanareddy.github.io/SAAF-circuit-breaker/",
-      "pages": true,
-      "lang": "HTML",
-      "stars": 1,
-      "pushed": "2026-11-03",
-      "blurb": "Policy circuit breaker that quarantines drifting agents and restores a healthy checkpoint"
     },
     {
       "repo": "gridqueue-grid-connection",
