@@ -1,12 +1,10 @@
 {
   "total": 40,
-  "captured": 38,
+  "captured": 39,
   "missing": [
-    "SAAF-circuit-breaker",
     "Handy"
   ],
   "unavailable": {
-    "SAAF-circuit-breaker": "blank",
     "Handy": "http_404"
   },
   "sites": [
@@ -27,28 +25,36 @@
       "pushed": "2026-10-07"
     },
     {
-      "repo": "SAAF-circuit-breaker",
-      "url": "https://knarayanareddy.github.io/SAAF-circuit-breaker/",
-      "status": "blank",
-      "ok": false,
-      "bytes": 4714,
-      "pushed": "2026-11-10"
-    },
-    {
       "repo": "toolscour",
       "url": "https://knarayanareddy.github.io/toolscour/",
       "status": "ok",
       "ok": true,
-      "bytes": 125606,
-      "pushed": "2026-11-09"
+      "bytes": 125460,
+      "pushed": "2026-11-10"
     },
     {
       "repo": "AI-Daily",
       "url": "https://knarayanareddy.github.io/AI-Daily/",
       "status": "ok",
       "ok": true,
-      "bytes": 71751,
-      "pushed": "2026-11-09"
+      "bytes": 71778,
+      "pushed": "2026-11-10"
+    },
+    {
+      "repo": "AI-Arsenal",
+      "url": "https://knarayanareddy.github.io/AI-Arsenal/",
+      "status": "ok",
+      "ok": true,
+      "bytes": 167033,
+      "pushed": "2026-11-10"
+    },
+    {
+      "repo": "SAAF-circuit-breaker",
+      "url": "https://knarayanareddy.github.io/SAAF-circuit-breaker/",
+      "status": "ok",
+      "ok": true,
+      "bytes": 72424,
+      "pushed": "2026-11-10"
     },
     {
       "repo": "hack-for-good",
@@ -65,14 +71,6 @@
       "ok": true,
       "bytes": 182073,
       "pushed": "2026-11-08"
-    },
-    {
-      "repo": "AI-Arsenal",
-      "url": "https://knarayanareddy.github.io/AI-Arsenal/",
-      "status": "ok",
-      "ok": true,
-      "bytes": 166945,
-      "pushed": "2026-11-07"
     },
     {
       "repo": "Aeroscribe",
