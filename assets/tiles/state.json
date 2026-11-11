@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-11T11:55:49Z",
+  "checked": "2026-11-11T19:42:04Z",
   "fresh_days": 21,
   "sites": {
     "3dexperimentation": {
@@ -8,13 +8,13 @@
       "confirmed_live": true
     },
     "AI-Arsenal": {
-      "age_days": 3,
-      "captured": "2026-11-08T11:23:44Z",
+      "age_days": 0,
+      "captured": "2026-11-11T11:58:15Z",
       "confirmed_live": true
     },
     "AI-Daily": {
       "age_days": 0,
-      "captured": "2026-11-10T12:51:09Z",
+      "captured": "2026-11-11T11:58:15Z",
       "confirmed_live": true
     },
     "Aerorepos": {
@@ -28,22 +28,22 @@
       "confirmed_live": true
     },
     "Agentcrash": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:49Z",
       "confirmed_live": true
     },
     "Autoorg": {
-      "age_days": 7,
+      "age_days": 8,
       "captured": "2026-11-03T12:06:04Z",
       "confirmed_live": true
     },
     "Bunqsy": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:37Z",
       "confirmed_live": true
     },
     "Courserefresh": {
-      "age_days": 5,
+      "age_days": 6,
       "captured": "2026-11-05T12:33:44Z",
       "confirmed_live": true
     },
@@ -54,11 +54,11 @@
     },
     "Handy": {
       "age_days": 0,
-      "captured": "2026-11-10T12:51:08Z",
+      "captured": "2026-11-11T11:58:16Z",
       "confirmed_live": true
     },
     "LEGACYVAULTV1.0": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:40Z",
       "confirmed_live": true
     },
@@ -68,22 +68,22 @@
       "confirmed_live": true
     },
     "Nimbus": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:43Z",
       "confirmed_live": true
     },
     "SAAF-circuit-breaker": {
       "age_days": 0,
-      "captured": "2026-11-10T12:51:08Z",
+      "captured": "2026-11-11T11:58:14Z",
       "confirmed_live": true
     },
     "WebsitedesignandPrompts": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:37Z",
       "confirmed_live": true
     },
     "accesshold": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:37Z",
       "confirmed_live": true
     },
@@ -93,27 +93,27 @@
       "confirmed_live": true
     },
     "curiolab": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:41Z",
       "confirmed_live": true
     },
     "dreamswarm": {
-      "age_days": 7,
+      "age_days": 8,
       "captured": "2026-11-03T12:06:03Z",
       "confirmed_live": true
     },
     "ghosthandshake": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:39Z",
       "confirmed_live": true
     },
     "gitscour": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:46Z",
       "confirmed_live": true
     },
     "gridqueue-grid-connection": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:52Z",
       "confirmed_live": true
     },
@@ -123,7 +123,7 @@
       "confirmed_live": true
     },
     "harvestgrid": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:49Z",
       "confirmed_live": true
     },
@@ -133,17 +133,17 @@
       "confirmed_live": true
     },
     "jointcheck-solder-inspection": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:51Z",
       "confirmed_live": true
     },
     "keepsake": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:43Z",
       "confirmed_live": true
     },
     "myjevuses": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:48Z",
       "confirmed_live": true
     },
@@ -153,47 +153,47 @@
       "confirmed_live": true
     },
     "proofpilot": {
-      "age_days": 5,
+      "age_days": 6,
       "captured": "2026-11-05T12:33:44Z",
       "confirmed_live": true
     },
     "proofpress-evidence-portal": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:20:08Z",
       "confirmed_live": true
     },
     "redflag-eu-compliance": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:50Z",
       "confirmed_live": true
     },
     "reflex-physical-ai": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:46Z",
       "confirmed_live": true
     },
     "roomsmith": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:47Z",
       "confirmed_live": true
     },
     "sallie-returns-ai-agent": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:54Z",
       "confirmed_live": true
     },
     "so101-domain-operator": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:40Z",
       "confirmed_live": true
     },
     "toolscour": {
       "age_days": 0,
-      "captured": "2026-11-10T12:51:08Z",
+      "captured": "2026-11-11T11:58:15Z",
       "confirmed_live": true
     },
     "twitch-codex": {
-      "age_days": 6,
+      "age_days": 7,
       "captured": "2026-11-04T12:19:40Z",
       "confirmed_live": true
     },
