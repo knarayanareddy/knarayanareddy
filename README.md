@@ -97,9 +97,9 @@ class KiranNarayanareddy:
 <div align="center">
 
 <!-- COUNTERS:START -->
-**38 live GitHub Pages sites** · **40 live deployments** · **139 original repositories** · **113 stars** · **7 forks** · **3 followers**
+**38 live GitHub Pages sites** · **40 live deployments** · **143 original repositories** · **113 stars** · **7 forks** · **3 followers**
 
-<sub>**TypeScript** 50 · **Python** 36 · **JavaScript** 12 · **HTML** 5 · **Rust** 4 · **Go** 2</sub>
+<sub>**TypeScript** 52 · **Python** 37 · **JavaScript** 12 · **HTML** 5 · **Rust** 4 · **Go** 2</sub>
 <!-- COUNTERS:END -->
 
 </div>
