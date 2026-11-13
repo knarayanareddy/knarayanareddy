@@ -1,8 +1,8 @@
 {
   "followers": 3,
-  "public_repos": 148,
+  "public_repos": 149,
   "generated": "2026-11-02 10:13 UTC",
-  "repos": 143,
+  "repos": 144,
   "stars": 113,
   "forks": 7,
   "site_count": 40,
@@ -10,7 +10,7 @@
   "languages": [
     [
       "TypeScript",
-      53
+      55
     ],
     [
       "Python",
@@ -44,7 +44,7 @@
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-11",
+      "pushed": "2026-11-12",
       "blurb": "3D knowledge galaxy and stack architect over 11,000+ open-source AI tools, models, runtimes and skill packs"
     },
     {
@@ -53,7 +53,7 @@
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-11",
+      "pushed": "2026-11-12",
       "blurb": "A calm, curated daily briefing for the AI ecosystem, built on a Scout → Challenge → Agree editorial model"
     },
     {
