@@ -1,8 +1,8 @@
 {
   "followers": 3,
-  "public_repos": 150,
+  "public_repos": 153,
   "generated": "2026-11-02 10:13 UTC",
-  "repos": 145,
+  "repos": 148,
   "stars": 113,
   "forks": 7,
   "site_count": 40,
@@ -22,7 +22,7 @@
     ],
     [
       "HTML",
-      6
+      9
     ],
     [
       "Rust",
