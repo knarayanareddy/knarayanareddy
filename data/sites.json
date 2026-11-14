@@ -1,8 +1,8 @@
 {
   "followers": 3,
-  "public_repos": 149,
+  "public_repos": 150,
   "generated": "2026-11-02 10:13 UTC",
-  "repos": 144,
+  "repos": 145,
   "stars": 113,
   "forks": 7,
   "site_count": 40,
@@ -22,7 +22,7 @@
     ],
     [
       "HTML",
-      5
+      6
     ],
     [
       "Rust",
@@ -44,7 +44,7 @@
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-12",
+      "pushed": "2026-11-13",
       "blurb": "3D knowledge galaxy and stack architect over 11,000+ open-source AI tools, models, runtimes and skill packs"
     },
     {
@@ -53,7 +53,7 @@
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-12",
+      "pushed": "2026-11-13",
       "blurb": "A calm, curated daily briefing for the AI ecosystem, built on a Scout → Challenge → Agree editorial model"
     },
     {
@@ -62,8 +62,17 @@
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-11",
+      "pushed": "2026-11-13",
       "blurb": "Schema-first, Markdown-native encyclopedia of AI engineering — readable by humans, LLMs and agents"
+    },
+    {
+      "repo": "Aeroscribe",
+      "url": "https://knarayanareddy.github.io/Aeroscribe/",
+      "pages": true,
+      "lang": "TypeScript",
+      "stars": 1,
+      "pushed": "2026-11-13",
+      "blurb": "Nine gated stages from literature archaeology to a submission-ready manuscript, every claim traceable to a recorded computation"
     },
     {
       "repo": "SAAF-circuit-breaker",
@@ -91,15 +100,6 @@
       "stars": 0,
       "pushed": "2026-11-08",
       "blurb": "ACAPS Ground Truth — Ninety-second expert elicitation on ACAPS risk statements, with intervals and a dissent loop."
-    },
-    {
-      "repo": "Aeroscribe",
-      "url": "https://knarayanareddy.github.io/Aeroscribe/",
-      "pages": true,
-      "lang": "TypeScript",
-      "stars": 1,
-      "pushed": "2026-11-06",
-      "blurb": "Nine gated stages from literature archaeology to a submission-ready manuscript, every claim traceable to a recorded computation"
     },
     {
       "repo": "Courserefresh",
