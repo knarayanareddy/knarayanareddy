@@ -29,8 +29,8 @@
       "url": "https://knarayanareddy.github.io/toolscour/",
       "status": "ok",
       "ok": true,
-      "bytes": 125284,
-      "pushed": "2026-11-12"
+      "bytes": 124434,
+      "pushed": "2026-11-13"
     },
     {
       "repo": "AI-Daily",
@@ -38,15 +38,23 @@
       "status": "ok",
       "ok": true,
       "bytes": 71751,
-      "pushed": "2026-11-12"
+      "pushed": "2026-11-13"
     },
     {
       "repo": "AI-Arsenal",
       "url": "https://knarayanareddy.github.io/AI-Arsenal/",
       "status": "ok",
       "ok": true,
-      "bytes": 166980,
-      "pushed": "2026-11-11"
+      "bytes": 167125,
+      "pushed": "2026-11-13"
+    },
+    {
+      "repo": "Aeroscribe",
+      "url": "https://knarayanareddy.github.io/Aeroscribe/",
+      "status": "ok",
+      "ok": true,
+      "bytes": 1162213,
+      "pushed": "2026-11-13"
     },
     {
       "repo": "SAAF-circuit-breaker",
@@ -71,14 +79,6 @@
       "ok": true,
       "bytes": 182073,
       "pushed": "2026-11-08"
-    },
-    {
-      "repo": "Aeroscribe",
-      "url": "https://knarayanareddy.github.io/Aeroscribe/",
-      "status": "ok",
-      "ok": true,
-      "bytes": 1162452,
-      "pushed": "2026-11-06"
     },
     {
       "repo": "Courserefresh",
