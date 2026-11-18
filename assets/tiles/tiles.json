@@ -12,7 +12,7 @@
       "repo": "toolscour",
       "metric": "12,771 tools",
       "phase": 1.7,
-      "captured": "2026-11-17T13:39:39Z",
+      "captured": "2026-11-18T13:14:07Z",
       "age_days": 0,
       "confirmed_live": true
     },
@@ -29,7 +29,7 @@
       "metric": "1,598 entries",
       "phase": 4.6,
       "captured": "2026-11-17T13:39:39Z",
-      "age_days": 0,
+      "age_days": 1,
       "confirmed_live": true
     },
     {
