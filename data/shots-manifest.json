@@ -25,20 +25,12 @@
       "pushed": "2026-10-07"
     },
     {
-      "repo": "gitscour",
-      "url": "https://knarayanareddy.github.io/gitscour/",
-      "status": "ok",
-      "ok": true,
-      "bytes": 178348,
-      "pushed": "2026-11-18"
-    },
-    {
       "repo": "toolscour",
       "url": "https://knarayanareddy.github.io/toolscour/",
       "status": "ok",
       "ok": true,
-      "bytes": 125318,
-      "pushed": "2026-11-18"
+      "bytes": 125274,
+      "pushed": "2026-11-19"
     },
     {
       "repo": "AI-Daily",
@@ -46,6 +38,14 @@
       "status": "ok",
       "ok": true,
       "bytes": 71751,
+      "pushed": "2026-11-19"
+    },
+    {
+      "repo": "gitscour",
+      "url": "https://knarayanareddy.github.io/gitscour/",
+      "status": "ok",
+      "ok": true,
+      "bytes": 178348,
       "pushed": "2026-11-18"
     },
     {
