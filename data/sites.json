@@ -10,7 +10,7 @@
   "languages": [
     [
       "TypeScript",
-      60
+      59
     ],
     [
       "Python",
@@ -18,7 +18,7 @@
     ],
     [
       "JavaScript",
-      13
+      14
     ],
     [
       "HTML",
@@ -39,21 +39,12 @@
   ],
   "sites": [
     {
-      "repo": "gitscour",
-      "url": "https://knarayanareddy.github.io/gitscour/",
-      "pages": true,
-      "lang": "Python",
-      "stars": 1,
-      "pushed": "2026-11-18",
-      "blurb": "Queryable knowledge base of 50,000+ high-star GitHub repositories, sharded and served free from Pages"
-    },
-    {
       "repo": "toolscour",
       "url": "https://knarayanareddy.github.io/toolscour/",
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-18",
+      "pushed": "2026-11-19",
       "blurb": "3D knowledge galaxy and stack architect over 11,000+ open-source AI tools, models, runtimes and skill packs"
     },
     {
@@ -62,8 +53,17 @@
       "pages": true,
       "lang": "JavaScript",
       "stars": 1,
-      "pushed": "2026-11-18",
+      "pushed": "2026-11-19",
       "blurb": "A calm, curated daily briefing for the AI ecosystem, built on a Scout → Challenge → Agree editorial model"
+    },
+    {
+      "repo": "gitscour",
+      "url": "https://knarayanareddy.github.io/gitscour/",
+      "pages": true,
+      "lang": "Python",
+      "stars": 1,
+      "pushed": "2026-11-18",
+      "blurb": "Queryable knowledge base of 50,000+ high-star GitHub repositories, sharded and served free from Pages"
     },
     {
       "repo": "AI-Arsenal",
