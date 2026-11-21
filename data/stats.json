@@ -1596,7 +1596,7 @@
   "languages": [
     [
       "TypeScript",
-      59
+      60
     ],
     [
       "Python",
@@ -1617,10 +1617,6 @@
     [
       "Go",
       2
-    ],
-    [
-      "Jupyter Notebook",
-      1
     ],
     [
       "Kotlin",

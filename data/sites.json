@@ -3,14 +3,14 @@
   "public_repos": 161,
   "generated": "2026-11-02 10:13 UTC",
   "repos": 155,
-  "stars": 115,
+  "stars": 116,
   "forks": 8,
   "site_count": 40,
   "pages_count": 38,
   "languages": [
     [
       "TypeScript",
-      59
+      60
     ],
     [
       "Python",
@@ -31,10 +31,6 @@
     [
       "Go",
       2
-    ],
-    [
-      "Jupyter Notebook",
-      1
     ],
     [
       "Kotlin",
