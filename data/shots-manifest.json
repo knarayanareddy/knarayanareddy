@@ -29,8 +29,8 @@
       "url": "https://knarayanareddy.github.io/toolscour/",
       "status": "ok",
       "ok": true,
-      "bytes": 125274,
-      "pushed": "2026-11-19"
+      "bytes": 125497,
+      "pushed": "2026-11-20"
     },
     {
       "repo": "AI-Daily",
@@ -38,7 +38,15 @@
       "status": "ok",
       "ok": true,
       "bytes": 71751,
-      "pushed": "2026-11-19"
+      "pushed": "2026-11-20"
+    },
+    {
+      "repo": "AI-Arsenal",
+      "url": "https://knarayanareddy.github.io/AI-Arsenal/",
+      "status": "ok",
+      "ok": true,
+      "bytes": 166962,
+      "pushed": "2026-11-20"
     },
     {
       "repo": "gitscour",
@@ -47,14 +55,6 @@
       "ok": true,
       "bytes": 178348,
       "pushed": "2026-11-18"
-    },
-    {
-      "repo": "AI-Arsenal",
-      "url": "https://knarayanareddy.github.io/AI-Arsenal/",
-      "status": "ok",
-      "ok": true,
-      "bytes": 166936,
-      "pushed": "2026-11-16"
     },
     {
       "repo": "Aeroscribe",
