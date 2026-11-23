@@ -76,6 +76,7 @@ A searchable, visual map of **12,771** AI tools, models, runtimes and skill pack
 
 | Live site | Stack |
 |-----------|-------|
+| [**WebsitedesignandPrompts**](https://knarayanareddy.github.io/WebsitedesignandPrompts/) | `HTML` |
 | [**toolscour**](https://knarayanareddy.github.io/toolscour/) | `JavaScript` |
 | [**AI-Daily**](https://knarayanareddy.github.io/AI-Daily/) | `JavaScript` |
 | [**AI-Arsenal**](https://knarayanareddy.github.io/AI-Arsenal/) | `JavaScript` |
@@ -86,7 +87,6 @@ A searchable, visual map of **12,771** AI tools, models, runtimes and skill pack
 | [**benchmark**](https://knarayanareddy.github.io/benchmark/) | `TypeScript` |
 | [**Courserefresh**](https://knarayanareddy.github.io/Courserefresh/) | `TypeScript` |
 | [**proofpilot**](https://knarayanareddy.github.io/proofpilot/) | `Python` |
-| [**WebsitedesignandPrompts**](https://knarayanareddy.github.io/WebsitedesignandPrompts/) | `HTML` |
 | [**Bunqsy**](https://knarayanareddy.github.io/Bunqsy/) | `TypeScript` |
 | [**accesshold**](https://knarayanareddy.github.io/accesshold/) | `TypeScript` |
 | [**Autoorg**](https://knarayanareddy.github.io/Autoorg/) | `TypeScript` |
