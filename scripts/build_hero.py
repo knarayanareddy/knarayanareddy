@@ -290,15 +290,11 @@ def name_letters() -> str:
 
 
 def stat_chips(stats: dict, theme: dict) -> str:
-    # Same six figures the counters block and the badge row print, from the same
-    # data/sites.json, so the three artefacts cannot disagree.
+    # Lead with portfolio scale and earned interest, not follower/fork counts.
     chips = [
         (str(stats.get("site_count", 0)), "deployments"),
-        (str(stats.get("pages_count", 0)), "pages"),
         (str(stats.get("repos", 0)), "repos"),
         (str(stats.get("stars", 0)), "stars"),
-        (str(stats.get("forks", 0)), "forks"),
-        (str(stats.get("followers", 0)), "followers"),
     ]
     parts = []
     x = 48.0
