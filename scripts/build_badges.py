@@ -40,8 +40,10 @@ THEMES = TOKENS  # from scripts/tokens.py — one palette for every card
 # No glyphs: exotic icon characters depend on the viewer's font and render as
 # tofu or stray dots. A clean typographic chip is more reliable.
 SOCIAL = [
+    ("Followers", None, "#58a6ff", "https://github.com/knarayanareddy?tab=followers"),
     ("Total Stars", None, "#e3b341", "https://github.com/knarayanareddy?tab=repositories"),
     ("Repositories", None, "#8b949e", "https://github.com/knarayanareddy?tab=repositories"),
+    ("Forks", None, "#a371f7", "https://github.com/knarayanareddy?tab=repositories"),
     ("Live Sites", None, "#3fb950", "https://github.com/knarayanareddy?tab=repositories&q=&type=source"),
     ("LinkedIn", None, "#0a66c2", "https://www.linkedin.com/in/knarayanareddy/"),
     ("Follow", None, "#f0883e", "https://github.com/knarayanareddy.atom"),
@@ -202,8 +204,8 @@ def render(social_values: dict, theme_name: str) -> str:
     return (
         f'<svg xmlns="http://www.w3.org/2000/svg" width="{width:.0f}" height="{height:.0f}" '
         f'viewBox="0 0 {width:.0f} {height:.0f}" role="img" '
-        f'aria-label="Kiran Narayana Reddy — badges and technology stack">\n'
-        f'  <title>Kiran Narayana Reddy — badges and technology stack</title>\n'
+        f'aria-label="Kiran Narayanareddy — badges and technology stack">\n'
+        f'  <title>Kiran Narayanareddy — badges and technology stack</title>\n'
         f'  <defs><style>\n'
         f'    .fade {{ animation: fade .7s ease-out both; }}\n'
         f'    @keyframes fade {{ from {{ opacity: 0; transform: translateY(4px); }} '
@@ -226,8 +228,10 @@ def main() -> int:
         data = json.load(handle)
 
     social_values = {
+        "Followers": str(data.get("followers", 0)) if data.get("followers") else None,
         "Total Stars": str(data.get("stars", 0)),
         "Repositories": str(data.get("repos", 0)),
+        "Forks": str(data.get("forks", 0)),
         "Live Sites": str(data.get("site_count", 0)),
         "LinkedIn": None,
         "Follow": "RSS",
