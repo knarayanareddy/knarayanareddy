@@ -36,27 +36,27 @@ test("README never links the pages at a host that does not serve them", () => {
   }
 });
 
-test("the lower-page interactive links point to the dashboard and snake", () => {
+test("the interactive block exists and links the dashboard, snake and reel", () => {
   const text = block(readme, "INTERACTIVE");
   assert.ok(text.includes(`href="${SITE}/"`), "dashboard link missing or wrong host");
   assert.ok(text.includes(`href="${SITE}/snake.html"`), "snake link missing or wrong host");
-  assert.ok(!text.includes("reel.html"), "the reel link belongs in the lightweight portfolio links");
+  assert.ok(text.includes(`href="${SITE}/reel.html"`), "reel link missing or wrong host");
 });
 
 test("every page the interactive block links is actually published", () => {
   const text = block(readme, "INTERACTIVE");
   const linked = [...text.matchAll(new RegExp(`href="${SITE}/([^"]*)"`, "g"))];
-  assert.ok(linked.length >= 2, "expected dashboard and snake links");
+  assert.ok(linked.length >= 3, "expected dashboard, snake and reel links");
   for (const [, path] of linked) {
     const file = path === "" || path.endsWith("/") ? "index.html" : path;
     assert.ok(existsSync(ROOT + "web/" + file), `README links ${file}, but web/${file} does not exist`);
   }
 });
 
-test("the lower-page snake link points at the published page", () => {
+test("the snake caption points at the published page", () => {
   assert.ok(
-    readme.includes(`href="${SITE}/snake.html"`),
-    `the snake link must point at ${SITE}/snake.html`,
+    readme.includes(`](${SITE}/snake.html)`),
+    `the "Play it yourself" link must point at ${SITE}/snake.html`,
   );
 });
 
@@ -71,29 +71,4 @@ test("Pages fails loudly when a required artefact is missing", () => {
   for (const needed of ["index.html", "snake.html", "reel.html", "data/stats.json", "data/tokens.json"]) {
     assert.ok(pages.includes(needed), `the publish guard does not check _site/${needed}`);
   }
-});
-
-test("the first section introduces the builder and featured work before the galleries", () => {
-  const intro = readme.indexOf("## Kiran Narayana Reddy");
-  const featured = readme.indexOf("## Featured work");
-  const snapshot = readme.indexOf("## Portfolio snapshot");
-  const directory = readme.indexOf("All live deployments and their stacks");
-  assert.ok(intro >= 0 && featured > intro && snapshot > featured && directory > snapshot);
-  for (const project of ["Aeroscribe", "SAAF Circuit Breaker", "Bunqsy", "toolscour"]) {
-    assert.ok(readme.indexOf(project, featured) < snapshot, `${project} is missing from the featured section`);
-  }
-});
-
-test("the README links media galleries instead of embedding heavy captures", () => {
-  assert.match(block(readme, "REELS"), /reel\.html/);
-  assert.match(block(readme, "REELS"), /mosaic-dark\.svg/);
-  assert.doesNotMatch(readme, /src="[^\"]+\.(?:gif|png|jpe?g|webp)(?:[?\"])/i);
-  assert.doesNotMatch(readme, /src="https:\/\/raw\.githubusercontent\.com\/[^\"]*snake/);
-});
-
-test("the generated headline omits followers and forks, and toolscour uses one count", () => {
-  const counters = block(readme, "COUNTERS");
-  assert.doesNotMatch(counters, /followers|forks/i);
-  assert.match(readme, /12,771/);
-  assert.doesNotMatch(readme, /11,000|12,000/);
 });

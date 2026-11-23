@@ -5,8 +5,8 @@ Pulls every public repository for the user, works out which ones have a live
 GitHub Pages site, and rewrites the regions of README.md that sit between
 HTML comment markers:
 
-    <!-- SITE_CATALOGUE:START --> ... <!-- SITE_CATALOGUE:END -->
-    <!-- REELS:START -->        ... <!-- REELS:END -->
+    <!-- LIVE_SITES:START -->   ... <!-- LIVE_SITES:END -->
+    <!-- SHIPPED:START -->      ... <!-- SHIPPED:END -->
     <!-- COUNTERS:START -->     ... <!-- COUNTERS:END -->
 
 Usage:
@@ -45,7 +45,7 @@ TOKEN = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
 BLURBS: dict[str, str] = {
     "sallie-returns-ai-agent": "Omnichannel shoe-retail returns pipeline: a 6-node deterministic state machine with 48h stock holds, defect assessment and human supervisor triage",
     "Aeroscribe": "Nine gated stages from literature archaeology to a submission-ready manuscript, every claim traceable to a recorded computation",
-    "toolscour": "3D knowledge galaxy and stack architect over 12,771 open-source AI tools, models, runtimes and skill packs",
+    "toolscour": "3D knowledge galaxy and stack architect over 11,000+ open-source AI tools, models, runtimes and skill packs",
     "AI-Arsenal": "Schema-first, Markdown-native encyclopedia of AI engineering — readable by humans, LLMs and agents",
     "AI-Daily": "A calm, curated daily briefing for the AI ecosystem, built on a Scout → Challenge → Agree editorial model",
     "gitscour": "Queryable knowledge base of 50,000+ high-star GitHub repositories, sharded and served free from Pages",
@@ -86,6 +86,11 @@ BLURBS: dict[str, str] = {
 # hackathon challenge page that is not a deployed app of mine.
 EXCLUDE = {"sylva", "onegov2-spatial-assistant"}
 
+# The two reels that play inline at the top of the reel section. Everything else
+# is a cover in the grid, because every image in a README downloads whether it is
+# visible or not (measured - see render_reels).
+INLINE_REELS = ["sallie-returns-ai-agent", "toolscour"]
+
 # Where the recordings are played. A README cannot start a GIF, so a click has to
 # go somewhere that can: this page, which plays the recording in place.
 REEL_PLAYER = "https://knarayanareddy.github.io/knarayanareddy/reel.html"
@@ -99,6 +104,19 @@ LIVE_LINKS = {
     "dashboard": f"{SITE}/",
     "snake": f"{SITE}/snake.html",
 }
+
+# Featured live sites get a hand-written card row in the README, in this order.
+FEATURED = [
+    "sallie-returns-ai-agent",
+    "Aeroscribe",
+    "toolscour",
+    "AI-Arsenal",
+    "AI-Daily",
+    "gitscour",
+    "Aerorepos",
+    "WebsitedesignandPrompts",
+    "Bunqsy",
+]
 
 LANG_BADGE = {
     "TypeScript": "3178C6",
@@ -244,13 +262,33 @@ def collect() -> dict:
     }
 
 
+def render_featured(data: dict) -> str:
+    by_name = {s["repo"]: s for s in data["sites"]}
+    rows = []
+    for name in FEATURED:
+        site = by_name.get(name)
+        if not site:
+            continue
+        stack = f"`{site['lang']}`" if site["lang"] else "—"
+        stars = f"★ {site['stars']}" if site["stars"] else "—"
+        rows.append(
+            f"| 🌐 | [**{site['repo']}**]({site['url']}) · [source](https://github.com/{USER}/{site['repo']}) "
+            f"| {stack} | {stars} | {site['blurb']} |"
+        )
+    return (
+        "| | Live site | Stack | Stars | What it does |\n"
+        "|:--:|-----------|-------|:-----:|--------------|\n" + "\n".join(rows)
+    )
+
+
 def render_catalogue(data: dict) -> str:
-    """All deployed projects, listed once and grouped into two compact columns."""
-    sites = data["sites"]
-    if not sites:
-        return "_Nothing deployed yet._"
-    half = (len(sites) + 1) // 2
-    columns = [sites[:half], sites[half:]]
+    """Every other live site, grouped into two compact columns."""
+    featured = set(FEATURED)
+    rest = [s for s in data["sites"] if s["repo"] not in featured]
+    if not rest:
+        return "_Nothing else deployed yet._"
+    half = (len(rest) + 1) // 2
+    columns = [rest[:half], rest[half:]]
 
     tables = []
     for column in columns:
@@ -271,6 +309,20 @@ def render_catalogue(data: dict) -> str:
     )
 
 
+def render_shipped(data: dict) -> str:
+    recent = data["sites"][:8]
+    if not recent:
+        return "_Nothing shipped yet._"
+    icons = ["🚀", "🛰️", "🧠", "🧪", "🔭", "⚙️", "🛡️", "🎛️"]
+    lines = []
+    for icon, site in zip(icons, recent):
+        lines.append(
+            f"- {icon} **[`{site['repo']}`](https://github.com/{USER}/{site['repo']})** — "
+            f"[live]({site['url']}) · pushed {site['pushed']}"
+        )
+    return "\n".join(lines)
+
+
 def render_interactive(data: dict) -> str:
     """Links to the pages where the two cards actually react.
 
@@ -279,20 +331,32 @@ def render_interactive(data: dict) -> str:
     draw the same JSON on a canvas, so hovering works. Generating the links means
     they cannot drift to a host that does not serve them.
     """
+    count = data.get("reel_count", 0)
+    reels = f"browse the {count} recorded demos" if count else "browse the recorded demos"
     return (
         f'<a href="{LIVE_LINKS["dashboard"]}"><b>▶ Signal dashboard + contribution terrain</b></a>'
         f" — hover a bar, lift a block, switch theme  ·  "
-        f'<a href="{LIVE_LINKS["snake"]}">play the contribution snake</a>'
+        f'<a href="{LIVE_LINKS["snake"]}">play the contribution snake</a>  ·  '
+        f'<a href="{REEL_PLAYER}">{reels}</a>'
     )
 
 
 def render_counters(data: dict) -> str:
-    """A small portfolio snapshot; social proof stays out of the headline."""
+    """One block, one set of numbers.
+
+    Every figure the README states is emitted here from data/sites.json, so the
+    header badges, the counters and the prose cannot drift apart: a number that
+    is not derived from this file does not belong in the README.
+    """
     langs = " · ".join(f"**{lang}** {count}" for lang, count in data["languages"][:6])
+    followers = data["followers"]
+    follower_word = "follower" if followers == 1 else "followers"
     return (
+        f"**{data['pages_count']} live GitHub Pages sites** · "
         f"**{data['site_count']} live deployments** · "
         f"**{data['repos']} original repositories** · "
-        f"**{data['stars']} stars**\n\n"
+        f"**{data['stars']} stars** · **{data['forks']} forks** · "
+        f"**{followers} {follower_word}**\n\n"
         f"<sub>{langs}</sub>"
     )
 
@@ -301,17 +365,96 @@ REELS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 def render_reels(data: dict) -> str:
-    """Link to the galleries without embedding their many screenshots or GIFs."""
+    """Two reels play inline; the other eighteen are a collapsed cover wall.
+
+    What forced this shape, all of it measured rather than assumed:
+
+      * GitHub strips JavaScript, so a GIF cannot be started by a click in a
+        README - there is no hover, no player, nothing to click "play" on.
+      * GitHub strips ``loading="lazy"`` from README images even when it is
+        written into the source, and an ``<img>`` inside a closed ``<details>``
+        is fetched anyway. A details hides an image; it does not save its bytes.
+
+    So: two recordings play inline, and the rest are covers (~20 kB each) that
+    link to the reel player, where a click really does start playback in place.
+    The cover wall sits inside a *closed* details, so the section costs one
+    summary line until someone asks for more.
+    """
     try:
         with open(REELS, encoding="utf-8") as handle:
-            count = len(json.load(handle))
+            manifest = json.load(handle)
     except (OSError, ValueError):
-        count = 0
-    demos = f"{count} dated recordings" if count else "the dated recordings"
-    return (
-        f"[**Browse {demos}**]({REEL_PLAYER}) — click a project to play its capture.  ·  "
-        "[Open the deployment screenshot index](./assets/mosaic-dark.svg)"
+        return "_No reels recorded yet — the next run of `reels.yml` fills this in._"
+
+    reel_dir = os.path.dirname(REELS)
+    entries = []
+    for site in data["sites"]:
+        info = manifest.get(site["repo"])
+        if not info:
+            continue
+        gif = os.path.join(reel_dir, f"{site['repo']}.gif")
+        cover = os.path.join(reel_dir, f"{site['repo']}-cover.png")
+        if not os.path.exists(gif) or not os.path.exists(cover):
+            continue                  # never list a reel that is not on disk
+        entries.append((site, info))
+
+    if not entries:
+        return "_No reels recorded yet — the next run of `reels.yml` fills this in._"
+
+    by_repo = {site["repo"]: (site, info) for site, info in entries}
+    inline = [by_repo[name] for name in INLINE_REELS if name in by_repo]
+    if not inline:                            # nothing chosen is present: take two
+        inline = sorted(entries, key=lambda e: e[1].get("recorded", ""), reverse=True)[:2]
+    inline_repos = {site["repo"] for site, _ in inline}
+    rest = sorted(
+        (e for e in entries if e[0]["repo"] not in inline_repos),
+        key=lambda e: e[0]["repo"].lower(),
     )
+
+    parts = []
+    for site, info in inline:
+        parts.append(
+            f'<a href="{site["url"]}"><img src="./assets/reels/{site["repo"]}.gif" '
+            f'alt="Recording of {site["repo"]} — {info["label"]}, recorded {info["recorded"]}" '
+            f'width="100%" /></a>'
+            f'<sub><a href="{site["url"]}"><b>{site["repo"]}</b></a> — {info["label"]} · '
+            f'recorded {info["recorded"]} · plays inline</sub>'
+        )
+
+    if rest:
+        cols = 4
+        cells = []
+        for site, info in rest:
+            play = f'{REEL_PLAYER}?r={site["repo"]}'
+            cells.append(
+                f'<td width="25%" align="center" valign="top">\n'
+                f'<a href="{play}"><img src="./assets/reels/{site["repo"]}-cover.png" '
+                f'alt="{site["repo"]} — {info["label"]}, recorded {info["recorded"]}. Opens the player." /></a>\n'
+                f'<sub><a href="{play}"><b>{site["repo"]}</b></a> ▶</sub>\n'
+                f'</td>'
+            )
+        rows = [
+            "<tr>" + "".join(cells[i:i + cols]) + "</tr>"
+            for i in range(0, len(cells), cols)
+        ]
+        parts.append(
+            f'<details><summary><b>▶ {len(rest)} more recordings</b> '
+            f'<sub>(click a cover to play it in the reel player)</sub></summary>\n'
+            f'<table width="100%">\n{"".join(rows)}\n</table>\n</details>'
+        )
+
+    covers_kb = sum(i.get("cover_bytes", 0) for _, i in rest) / 1e3
+    total_mb = sum(i["gif_bytes"] for _, i in entries) / 1e6
+    parts.append(
+        f"<sub><b>Why the grid opens a player instead of playing here:</b> GitHub strips "
+        f"JavaScript from a README and strips <code>loading=lazy</code> from README images, so "
+        f"every image downloads and nothing can be started by a click. Playing all "
+        f"{len(entries)} inline would cost every visitor ~{total_mb:.0f} MB; this section costs "
+        f"~{covers_kb:.0f} kB of covers plus the two inline recordings. "
+        f"<a href=\"{REEL_PLAYER}\">Open the player</a> to browse all of them with hover "
+        f"previews. Each is captioned with its own date — none is a live feed.</sub>"
+    )
+    return "\n\n".join(parts)
 
 
 VOLATILE = re.compile(r"<!-- Last updated: .*?-->")
@@ -345,9 +488,20 @@ def main() -> int:
         readme = handle.read()
 
     readme = replace_block(readme, "COUNTERS", render_counters(data))
+    readme = replace_block(readme, "LIVE_SITES", render_featured(data))
     readme = replace_block(readme, "SITE_CATALOGUE", render_catalogue(data))
+    readme = replace_block(readme, "SHIPPED", render_shipped(data))
     readme = replace_block(readme, "REELS", render_reels(data))
-    readme = replace_block(readme, "INTERACTIVE", render_interactive(data))
+    # The count comes from the manifest, which owns it, rather than from a number
+    # copied into sites.json: a copy would go stale the moment a reel is added.
+    try:
+        with open(REELS, encoding="utf-8") as handle:
+            reel_count = len(json.load(handle))
+    except (OSError, ValueError):
+        reel_count = 0
+    readme = replace_block(
+        readme, "INTERACTIVE", render_interactive({**data, "reel_count": reel_count})
+    )
     # Only move the stamp when something else actually changed. A timestamp that
     # ticks while the numbers do not makes the page look refreshed when it is
     # merely rebuilt; the footer says "daily" explicitly instead.

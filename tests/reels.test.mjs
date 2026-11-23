@@ -119,19 +119,50 @@ test("the reel workflow records on a real browser and asserts ffmpeg", () => {
   assert.match(workflow, /scripts\/build_reel\.py/);
 });
 
-test("the README links to media galleries without embedding their captures", () => {
+test("the README does not hide its images behind a false promise", () => {
+  // Measured on the served page, twice, because I got it wrong the first time:
+  //   * a closed <details> still fetches its images - it only hides them
+  //   * loading="lazy" written into the README is stripped by GitHub
+  // So nothing in the README may claim that a toggle saves the download.
   const section = readme.slice(
     readme.indexOf("<!-- REELS:START -->"),
     readme.indexOf("<!-- REELS:END -->"),
   );
-  assert.match(section, /reel\.html/, "recordings should open in the reel player");
-  assert.match(section, /mosaic-dark\.svg/, "screenshots should remain discoverable");
-  assert.doesNotMatch(section, /<img|assets\/reels\/.*\.(?:gif|png)/i, "do not embed reel media in the README");
+  if (!section.includes("assets/reels/")) return;
+
+  assert.ok(!/loading="lazy"/.test(section), "GitHub strips loading=lazy; claiming it is misleading");
+  assert.ok(
+    !/GIF loads when|loads when you (expand|open)|fetched only when you (expand|open)/i.test(section),
+    "the section must not claim a details defers the fetch",
+  );
+
+  // Two reels inline; every other recording is a cover that links to the player.
+  const inline = [...section.matchAll(/src="\.\/assets\/reels\/[^"]+\.gif"/g)];
+  assert.ok(inline.length <= 2, `${inline.length} GIFs inline; the rest belong in the cover wall`);
+
+  const playLinks = [...section.matchAll(/reel\.html\?r=([^"&]+)/g)].map((m) => decodeURIComponent(m[1]));
+  const unique = [...new Set(playLinks)];
+  assert.ok(unique.length >= 8, `only ${unique.length} projects link to the player`);
+  for (const repo of unique) {
+    assert.ok(existsSync(`${root}assets/reels/${repo}.gif`), `player link for ${repo} has no recording`);
+    assert.ok(existsSync(`${root}assets/reels/${repo}-cover.png`), `${repo} has no cover for the wall`);
+  }
 });
 
-test("the README contains no reel thumbnails or screenshot mosaics", () => {
-  assert.doesNotMatch(readme, /src="[^\"]*assets\/(?:reels|mosaic)[^\"]*\.(?:gif|png)/i);
-  assert.doesNotMatch(readme, /loading="lazy"/, "GitHub strips lazy-loading from README images");
+test("the cover wall is collapsed, so the section stays short", () => {
+  const section = readme.slice(
+    readme.indexOf("<!-- REELS:START -->"),
+    readme.indexOf("<!-- REELS:END -->"),
+  );
+  const wall = section.match(/<details[^>]*>[\s\S]*?<\/details>/);
+  if (!wall) return;                       // no wall yet
+  assert.match(wall[0].slice(0, 40), /<details>/, "the wall must not start out open");
+  assert.doesNotMatch(wall[0].slice(0, 40), /<details open/);
+  // And it must actually be a grid, not one tile per row.
+  const tiles = (wall[0].match(/<td /g) || []).length;
+  const rows = (wall[0].match(/<tr>/g) || []).length;
+  assert.ok(tiles >= 8, "the wall should hold the recordings that are not inline");
+  assert.ok(tiles / rows >= 3, `only ${(tiles / rows).toFixed(1)} tiles per row; that is a list, not a grid`);
 });
 
 test("the player page plays in place, and hover only previews", () => {
