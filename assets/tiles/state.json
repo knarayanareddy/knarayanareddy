@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-24T17:41:24Z",
+  "checked": "2026-11-24T23:56:23Z",
   "fresh_days": 21,
   "sites": {
     "3dexperimentation": {
@@ -78,7 +78,7 @@
       "confirmed_live": true
     },
     "WebsitedesignandPrompts": {
-      "age_days": 0,
+      "age_days": 1,
       "captured": "2026-11-23T19:23:26Z",
       "confirmed_live": true
     },

@@ -97,9 +97,9 @@ class KiranNarayanareddy:
 <div align="center">
 
 <!-- COUNTERS:START -->
-**38 live GitHub Pages sites** · **40 live deployments** · **156 original repositories** · **116 stars** · **8 forks** · **3 followers**
+**38 live GitHub Pages sites** · **40 live deployments** · **157 original repositories** · **116 stars** · **8 forks** · **3 followers**
 
-<sub>**TypeScript** 60 · **Python** 39 · **JavaScript** 14 · **HTML** 8 · **Rust** 4 · **Go** 2</sub>
+<sub>**TypeScript** 60 · **Python** 39 · **JavaScript** 14 · **HTML** 9 · **Rust** 4 · **Go** 2</sub>
 <!-- COUNTERS:END -->
 
 </div>
@@ -295,10 +295,10 @@ class KiranNarayanareddy:
 </div>
 
 <!-- SHIPPED:START -->
-- 🚀 **[`WebsitedesignandPrompts`](https://github.com/knarayanareddy/WebsitedesignandPrompts)** — [live](https://knarayanareddy.github.io/WebsitedesignandPrompts/) · pushed 2026-11-23
-- 🛰️ **[`toolscour`](https://github.com/knarayanareddy/toolscour)** — [live](https://knarayanareddy.github.io/toolscour/) · pushed 2026-11-23
-- 🧠 **[`AI-Daily`](https://github.com/knarayanareddy/AI-Daily)** — [live](https://knarayanareddy.github.io/AI-Daily/) · pushed 2026-11-23
-- 🧪 **[`AI-Arsenal`](https://github.com/knarayanareddy/AI-Arsenal)** — [live](https://knarayanareddy.github.io/AI-Arsenal/) · pushed 2026-11-22
+- 🚀 **[`toolscour`](https://github.com/knarayanareddy/toolscour)** — [live](https://knarayanareddy.github.io/toolscour/) · pushed 2026-11-24
+- 🛰️ **[`AI-Daily`](https://github.com/knarayanareddy/AI-Daily)** — [live](https://knarayanareddy.github.io/AI-Daily/) · pushed 2026-11-24
+- 🧠 **[`AI-Arsenal`](https://github.com/knarayanareddy/AI-Arsenal)** — [live](https://knarayanareddy.github.io/AI-Arsenal/) · pushed 2026-11-24
+- 🧪 **[`WebsitedesignandPrompts`](https://github.com/knarayanareddy/WebsitedesignandPrompts)** — [live](https://knarayanareddy.github.io/WebsitedesignandPrompts/) · pushed 2026-11-23
 - 🔭 **[`gitscour`](https://github.com/knarayanareddy/gitscour)** — [live](https://knarayanareddy.github.io/gitscour/) · pushed 2026-11-18
 - ⚙️ **[`Aeroscribe`](https://github.com/knarayanareddy/Aeroscribe)** — [live](https://knarayanareddy.github.io/Aeroscribe/) · pushed 2026-11-13
 - 🛡️ **[`SAAF-circuit-breaker`](https://github.com/knarayanareddy/SAAF-circuit-breaker)** — [live](https://knarayanareddy.github.io/SAAF-circuit-breaker/) · pushed 2026-11-10
