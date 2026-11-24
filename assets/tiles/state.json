@@ -1,5 +1,5 @@
 {
-  "checked": "2026-11-24T14:57:37Z",
+  "checked": "2026-11-24T17:41:24Z",
   "fresh_days": 21,
   "sites": {
     "3dexperimentation": {
@@ -8,13 +8,13 @@
       "confirmed_live": false
     },
     "AI-Arsenal": {
-      "age_days": 0,
+      "age_days": 1,
       "captured": "2026-11-23T14:58:18Z",
       "confirmed_live": true
     },
     "AI-Daily": {
       "age_days": 0,
-      "captured": "2026-11-23T14:58:18Z",
+      "captured": "2026-11-24T15:00:43Z",
       "confirmed_live": true
     },
     "Aerorepos": {
@@ -54,7 +54,7 @@
     },
     "Handy": {
       "age_days": 0,
-      "captured": "2026-11-23T19:24:30Z",
+      "captured": "2026-11-24T15:00:42Z",
       "confirmed_live": true
     },
     "LEGACYVAULTV1.0": {
@@ -189,7 +189,7 @@
     },
     "toolscour": {
       "age_days": 0,
-      "captured": "2026-11-23T14:58:18Z",
+      "captured": "2026-11-24T15:00:43Z",
       "confirmed_live": true
     },
     "twitch-codex": {
