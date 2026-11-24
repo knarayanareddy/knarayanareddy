@@ -14,6 +14,10 @@ import { readFileSync, existsSync } from "node:fs";
 const ROOT = new URL("..", import.meta.url).pathname;
 const readme = readFileSync(ROOT + "README.md", "utf8");
 const pages = readFileSync(ROOT + ".github/workflows/pages.yml", "utf8");
+const dashboard = readFileSync(ROOT + "web/index.html", "utf8");
+const dashboardBuilder = readFileSync(ROOT + "scripts/build_dashboard.py", "utf8");
+const snake = readFileSync(ROOT + "web/snake.html", "utf8");
+const refreshWorkflow = readFileSync(ROOT + ".github/workflows/3d-contrib.yml", "utf8");
 
 /** The Pages site the workflow publishes to, without a trailing slash. */
 const SITE = "https://knarayanareddy.github.io/knarayanareddy";
@@ -58,6 +62,35 @@ test("the snake caption points at the published page", () => {
     readme.includes(`](${SITE}/snake.html)`),
     `the "Play it yourself" link must point at ${SITE}/snake.html`,
   );
+});
+
+test("the README dashboard snapshot links directly to its live canvas", () => {
+  const section = readme.slice(readme.indexOf("## Signal Dashboard"), readme.indexOf("### 🏔️ A year"));
+  assert.match(section, new RegExp(`<a href="${SITE}/">\\s*<picture>`));
+  assert.match(section, /Click the card for the interactive canvas/);
+});
+
+test("the live dashboard refreshes safely from timestamped real data", () => {
+  assert.match(dashboardBuilder, /"generated_at": updated_at\.isoformat\(\)/);
+  assert.match(dashboardBuilder, /%Y-%m-%d %H:%M UTC/);
+  assert.match(dashboard, /generated_at/);
+  assert.match(dashboard, /setInterval\([\s\S]*?5 \* 60 \* 1000/);
+  assert.match(dashboard, /visibilitychange/);
+  assert.match(dashboard, /data as of|data \$\{stamp\}|updated \$\{stamp\}/);
+  assert.match(dashboard, /14 repositories over 120 days/);
+  assert.match(refreshWorkflow, /cron: "17 \*\/6 \* \* \*"/);
+  assert.match(refreshWorkflow, /best-effort/);
+  assert.match(refreshWorkflow, /git add assets\/dashboard-\*\.svg assets\/terrain-\*\.svg data\/stats\.json/);
+});
+
+test("published and local pages resolve stats and theme JSON from the right data directory", () => {
+  for (const page of [dashboard, snake]) {
+    assert.match(page, /location\.protocol === "file:"/);
+    assert.match(page, /location\.pathname\.includes\("\/web\/"\)/);
+    assert.match(page, /"\.\/data\/"/);
+    assert.match(page, /"\.\.\/data\/"/);
+  }
+  assert.match(pages, /cp data\/\*\.json _site\/data\//);
 });
 
 test("Pages publishes the pages and the data they fetch", () => {

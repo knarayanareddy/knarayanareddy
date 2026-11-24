@@ -188,8 +188,10 @@ def collect() -> dict:
             sites = json.load(handle)
         languages = sites.get("languages", [])
 
+    updated_at = datetime.now(timezone.utc).replace(second=0, microsecond=0)
     return {
-        "generated": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+        "generated": updated_at.strftime("%Y-%m-%d"),
+        "generated_at": updated_at.isoformat().replace("+00:00", "Z"),
         "window_days": len(days),
         "total_contributions": data["contributionCalendar"]["totalContributions"],
         "commits": data["totalCommitContributions"],
@@ -452,6 +454,13 @@ def render(stats: dict, theme_name: str) -> str:
     )
     spark_line = spark_path(stats["weeks"], 452, 190, 404, 40)
     spark_area = (spark_line + " L856,230 L452,230 Z") if spark_line else ""
+    generated_label = stats["generated"]
+    if stats.get("generated_at"):
+        try:
+            stamp = datetime.fromisoformat(stats["generated_at"].replace("Z", "+00:00"))
+            generated_label = stamp.astimezone(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+        except ValueError:
+            generated_label = stats["generated_at"]
 
     svg = TEMPLATE
     for key, value in theme.items():
@@ -460,7 +469,7 @@ def render(stats: dict, theme_name: str) -> str:
     replacements = {
         "__ARIA__": aria,
         "__WINDOW__": str(stats["window_days"]),
-        "__GENERATED__": stats["generated"],
+        "__GENERATED__": generated_label,
         "__HOUR_BARS__": bars_hours(stats["hours"], theme),
         "__WEEKDAY_BARS__": bars_weekday(stats["weekday"], theme),
         "__CHIPS__": chips(stats, theme),

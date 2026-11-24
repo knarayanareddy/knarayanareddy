@@ -28,6 +28,8 @@
   }
   .card > header b { color: var(--text); letter-spacing: .5px; }
   .card > header .right { margin-left: auto; display: flex; gap: 7px; flex-wrap: wrap; }
+  #dashNote[data-state="fresh"] { color: var(--good); }
+  #dashNote[data-state="stale"], #dashNote[data-state="error"] { color: #f85149; }
   button {
     font: inherit; font-size: 11px; padding: 5px 10px; border-radius: 7px; cursor: pointer;
     background: #1c2128; color: var(--text); border: 1px solid var(--edge);
@@ -48,10 +50,11 @@
 <body>
   <h1>Live dashboards</h1>
   <p class="lede">
-    The same two cards that are PNG-like in the profile README, but here they accept input:
-    <b>hover a day</b> in the terrain to lift it, <b>hover a bar</b> in the dashboard to read the exact
-    number, and switch themes. Everything is drawn from <code>data/stats.json</code> — the same file the
-    generated SVGs come from, so the numbers cannot disagree.
+    The live canvas version of the profile cards: <b>hover a day</b> in the terrain or
+    <b>a bar</b> in the dashboard, and switch themes. The page checks the latest published
+    <code>data/stats.json</code> on load, on return to this tab, and every five minutes while open.
+    GitHub Actions refreshes that real contribution snapshot about every six hours (best effort).
+    The hour chart is a sample of commits from 14 repositories over 120 days—not a complete work-hours log.
   </p>
 
   <div class="links">
@@ -63,7 +66,7 @@
   <section class="card">
     <header>
       <b>Signal dashboard</b>
-      <span id="dashNote">hover a bar</span>
+      <span id="dashNote" role="status" aria-live="polite" data-state="checking">Loading latest stats…</span>
       <span class="right" id="dashThemes"></span>
     </header>
     <canvas id="dash" width="900" height="430" aria-label="Interactive signal dashboard"></canvas>
@@ -111,23 +114,66 @@ function themesFromTokens(tokens) {
 }
 
 const W = 900, H = 430;
+const DATA_BASE = location.protocol === "file:" || location.pathname.includes("/web/")
+  ? "../data/"
+  : "./data/";
 let stats = null;
 let theme = THEMES.dark;
 let hoverHour = -1, hoverDay = -1, hoverBlock = null;
 
 /* ---------------------------------------------------------------- data --- */
 
+function dataUrl(file) {
+  return new URL(`${DATA_BASE}${file}`, location.href);
+}
+
 async function loadTokens() {
   try {
-    const res = await fetch("../data/tokens.json", { cache: "no-cache" });
+    const res = await fetch(dataUrl("tokens.json"), { cache: "no-store" });
     if (res.ok) THEMES = themesFromTokens(await res.json());
   } catch { /* keep the literal */ }
 }
 
 async function load() {
-  const res = await fetch("../data/stats.json", { cache: "no-cache" });
+  const url = dataUrl("stats.json");
+  url.searchParams.set("_", String(Date.now())); // also bypass static/CDN caches
+  const res = await fetch(url, { cache: "no-store" });
   if (!res.ok) throw new Error(String(res.status));
   return res.json();
+}
+
+function snapshotTimestamp(data) {
+  const raw = data?.generated_at || data?.generated;
+  if (!raw) return "time unavailable";
+  if (!data?.generated_at) return `${raw} UTC · time unavailable`;
+  const date = new Date(raw);
+  if (Number.isNaN(date.getTime())) return raw;
+  return `${new Intl.DateTimeFormat("en-GB", {
+    day: "2-digit", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit",
+    timeZone: "UTC", hourCycle: "h23",
+  }).format(date)} UTC`;
+}
+
+function updateFreshness(data = stats) {
+  const status = document.getElementById("dashNote");
+  if (!data) return;
+  const stamp = snapshotTimestamp(data);
+  if (!data.generated_at) {
+    status.textContent = `data ${stamp}`;
+    status.dataset.state = "checking";
+    return;
+  }
+  const age = Date.now() - new Date(data.generated_at).getTime();
+  if (!Number.isFinite(age)) {
+    status.textContent = `data ${stamp}`;
+    status.dataset.state = "checking";
+  } else if (age > 12 * 60 * 60 * 1000) {
+    status.textContent = `stale · updated ${stamp}`;
+    status.dataset.state = "stale";
+  } else {
+    status.textContent = `updated ${stamp} · polling while open`;
+    status.dataset.state = "fresh";
+  }
 }
 
 /* ------------------------------------------------------------ dashboard --- */
@@ -146,7 +192,7 @@ function drawDashboard() {
   dctx.fillStyle = t.muted;
   dctx.font = "400 10px ui-monospace, monospace";
   dctx.textAlign = "right";
-  dctx.fillText(`last ${stats.window_days} days · generated ${stats.generated}`, 856, 38);
+  dctx.fillText(`last ${stats.window_days} days · updated ${snapshotTimestamp(stats)}`, 856, 38);
   dctx.textAlign = "left";
   dctx.strokeStyle = t.grid;
   dctx.beginPath(); dctx.moveTo(44, 50); dctx.lineTo(856, 50); dctx.stroke();
@@ -412,6 +458,35 @@ function themeButtons(host, current) {
 
 function redrawAll() { drawDashboard(); drawTerrain(); }
 
+let refreshInFlight = false;
+async function refreshStats() {
+  if (refreshInFlight) return;
+  refreshInFlight = true;
+  const previousVersion = stats && (stats.generated_at || JSON.stringify(stats));
+  try {
+    const next = await load();
+    const nextVersion = next.generated_at || JSON.stringify(next);
+    stats = next;
+    grid = buildGrid(stats.calendar || []);
+    updateFreshness();
+    if (!previousVersion || nextVersion !== previousVersion) {
+      hoverHour = -1; hoverDay = -1; hoverBlock = null;
+      redrawAll();
+    }
+  } catch (err) {
+    const status = document.getElementById("dashNote");
+    status.textContent = stats
+      ? `refresh failed · showing ${snapshotTimestamp(stats)}`
+      : "stats unavailable · retrying automatically";
+    status.dataset.state = "error";
+    if (!stats) {
+      document.getElementById("terrainNote").textContent = "stats.json unreachable";
+    }
+  } finally {
+    refreshInFlight = false;
+  }
+}
+
 /* --------------------------------------------------------------- input --- */
 
 dash.addEventListener("pointermove", (e) => {
@@ -476,18 +551,20 @@ ter.addEventListener("pointerleave", () => {
 
 (async function boot() {
   await loadTokens();
-  try {
-    stats = await load();
-  } catch (err) {
-    document.getElementById("dashNote").textContent = "stats.json unreachable";
-    document.getElementById("terrainNote").textContent = "stats.json unreachable";
-    return;
-  }
-  grid = buildGrid(stats.calendar || []);
   themeButtons(document.getElementById("dashThemes"), "dark");
   themeButtons(document.getElementById("terrainThemes"), "dark");
-  redrawAll();
+  await refreshStats();
 })();
+
+// Pages publishes the refreshed JSON on a schedule. Re-check after returning to
+// the page and every five minutes while visible; never poll in a hidden tab.
+setInterval(() => {
+  if (document.visibilityState === "visible") void refreshStats();
+}, 5 * 60 * 1000);
+window.addEventListener("focus", () => void refreshStats());
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "visible") void refreshStats();
+});
 </script>
 </body>
 </html>

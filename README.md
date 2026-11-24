@@ -506,13 +506,15 @@ At night, Dream Mode analyses patterns in an isolated worker and returns a DNA c
 
 <div align="center">
 
+<a href="https://knarayanareddy.github.io/knarayanareddy/">
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="./assets/dashboard-dark.svg" />
   <source media="(prefers-color-scheme: light)" srcset="./assets/dashboard-light.svg" />
-  <img src="./assets/dashboard-dark.svg" alt="Contribution dashboard: hourly and weekday rhythm, yearly totals, streaks and language mix" width="100%" />
+  <img src="./assets/dashboard-dark.svg" alt="Open the interactive Signal Dashboard: snapshot of GitHub contribution totals, commit timing, streaks and language mix" width="100%" />
 </picture>
+</a>
 
-<sub>One self-rendered card, no third-party widgets, drawn by <a href="scripts/build_dashboard.py">build_dashboard.py</a> from the GitHub contributions API — so the numbers are exact. <b>This is an image:</b> GitHub serves README images through its Camo proxy as <code>&lt;img&gt;</code>, which delivers no pointer events, so nothing inside it can react. The hoverable version is <a href="https://knarayanareddy.github.io/knarayanareddy/">here</a>.</sub>
+<sub>This README card is a generated SVG snapshot from <a href="scripts/build_dashboard.py">build_dashboard.py</a>; its generation timestamp is printed on the card. <b>Click the card for the interactive canvas</b> with hover readouts and theme switching. That page checks for newly published stats on load, when you return to it, and every five minutes while open. GitHub Actions refreshes the underlying contribution snapshot about every six hours (best effort). The hour chart samples commits from 14 repositories over 120 days; it is not a complete work-hours log.</sub>
 
 </div>
 
@@ -545,7 +547,7 @@ At night, Dream Mode analyses patterns in an isolated worker and returns a DNA c
 
 **[kiranreddy.nl](https://kiranreddy.nl)** · Delft, Netherlands · Autonomous agents · Aerospace & physical AI · Compliance-as-code
 
-<sub>Live sites, counters and cards refresh themselves daily at 04:17 UTC via <a href=".github/workflows/update-profile.yml">GitHub Actions</a> — see <a href="scripts/build_profile.py">scripts/build_profile.py</a></sub>
+<sub>Live sites and profile counters refresh daily at 04:17 UTC via <a href=".github/workflows/update-profile.yml">GitHub Actions</a>; contribution stats refresh about every six hours via <a href=".github/workflows/3d-contrib.yml">3d-contrib.yml</a>. Scheduled runs are best effort.</sub>
 
 </div>
 
