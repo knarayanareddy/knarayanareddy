@@ -5,7 +5,7 @@
       "metric": "manuscript pipeline",
       "phase": 0.0,
       "captured": "2026-11-14T11:38:03Z",
-      "age_days": 9,
+      "age_days": 10,
       "confirmed_live": true
     },
     {
@@ -21,7 +21,7 @@
       "metric": "50,000+ repos",
       "phase": 3.1,
       "captured": "2026-11-19T13:34:40Z",
-      "age_days": 4,
+      "age_days": 5,
       "confirmed_live": true
     },
     {
@@ -45,7 +45,7 @@
       "metric": "7-agent oracle",
       "phase": 5.8,
       "captured": "2026-11-04T12:19:37Z",
-      "age_days": 19,
+      "age_days": 20,
       "confirmed_live": true
     }
   ]
