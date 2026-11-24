@@ -44,12 +44,10 @@ jobs:
             echo "::notice::Pages is not enabled. Settings -> Pages -> Source: GitHub Actions, then re-run."
           fi
 
-      # The pages fetch "../data/<file>.json" so that the same file works both
-      # from here and over file://, which means _site/data/ has to exist at the
-      # site root. Publishing only stats.json was a silent bug: index.html also
-      # asks for tokens.json, and when it 404s the page quietly draws from a
-      # hardcoded palette that drifts from scripts/tokens.py. Publish the whole
-      # directory and the drift cannot happen.
+      # The published pages fetch "./data/<file>.json" from the site root;
+      # source files under web/ and file:// previews select "../data/" instead.
+      # Publish the whole directory so both stats.json and tokens.json are there;
+      # otherwise the dashboard silently falls back to stale demo colors/data.
       - name: Assemble the site
         if: steps.check.outputs.enabled == 'true'
         run: |
