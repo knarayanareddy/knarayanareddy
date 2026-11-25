@@ -12,7 +12,7 @@
       "repo": "toolscour",
       "metric": "12,771 tools",
       "phase": 1.7,
-      "captured": "2026-11-24T15:00:43Z",
+      "captured": "2026-11-25T14:39:47Z",
       "age_days": 0,
       "confirmed_live": true
     },
@@ -28,8 +28,8 @@
       "repo": "AI-Arsenal",
       "metric": "1,598 entries",
       "phase": 4.6,
-      "captured": "2026-11-23T14:58:18Z",
-      "age_days": 1,
+      "captured": "2026-11-25T14:39:47Z",
+      "age_days": 0,
       "confirmed_live": true
     },
     {
@@ -37,7 +37,7 @@
       "metric": "38 templates",
       "phase": 2.4,
       "captured": "2026-11-23T19:23:26Z",
-      "age_days": 1,
+      "age_days": 2,
       "confirmed_live": true
     },
     {
