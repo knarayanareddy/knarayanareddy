@@ -25,20 +25,12 @@
       "pushed": "2026-10-07"
     },
     {
-      "repo": "WebsitedesignandPrompts",
-      "url": "https://knarayanareddy.github.io/WebsitedesignandPrompts/",
-      "status": "ok",
-      "ok": true,
-      "bytes": 211079,
-      "pushed": "2026-11-23"
-    },
-    {
       "repo": "toolscour",
       "url": "https://knarayanareddy.github.io/toolscour/",
       "status": "ok",
       "ok": true,
-      "bytes": 125679,
-      "pushed": "2026-11-23"
+      "bytes": 124758,
+      "pushed": "2026-11-24"
     },
     {
       "repo": "AI-Daily",
@@ -46,15 +38,23 @@
       "status": "ok",
       "ok": true,
       "bytes": 71751,
-      "pushed": "2026-11-23"
+      "pushed": "2026-11-24"
     },
     {
       "repo": "AI-Arsenal",
       "url": "https://knarayanareddy.github.io/AI-Arsenal/",
       "status": "ok",
       "ok": true,
-      "bytes": 167108,
-      "pushed": "2026-11-22"
+      "bytes": 166972,
+      "pushed": "2026-11-24"
+    },
+    {
+      "repo": "WebsitedesignandPrompts",
+      "url": "https://knarayanareddy.github.io/WebsitedesignandPrompts/",
+      "status": "ok",
+      "ok": true,
+      "bytes": 211079,
+      "pushed": "2026-11-23"
     },
     {
       "repo": "gitscour",
