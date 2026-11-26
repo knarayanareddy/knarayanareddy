@@ -1,8 +1,8 @@
 {
   "followers": 3,
-  "public_repos": 165,
+  "public_repos": 166,
   "generated": "2026-11-02 10:13 UTC",
-  "repos": 159,
+  "repos": 160,
   "stars": 116,
   "forks": 8,
   "site_count": 40,
@@ -10,7 +10,7 @@
   "languages": [
     [
       "TypeScript",
-      61
+      62
     ],
     [
       "Python",
@@ -18,11 +18,11 @@
     ],
     [
       "JavaScript",
-      14
+      15
     ],
     [
       "HTML",
-      10
+      9
     ],
     [
       "Rust",
@@ -66,13 +66,13 @@
       "blurb": "Schema-first, Markdown-native encyclopedia of AI engineering — readable by humans, LLMs and agents"
     },
     {
-      "repo": "WebsitedesignandPrompts",
-      "url": "https://knarayanareddy.github.io/WebsitedesignandPrompts/",
+      "repo": "FreeWebsitedesignandPrompts",
+      "url": "https://knarayanareddy.github.io/FreeWebsitedesignandPrompts/",
       "pages": true,
       "lang": "HTML",
       "stars": 6,
       "pushed": "2026-11-23",
-      "blurb": "Democratising the paywalled web: reusable landing-page templates with the full build prompts"
+      "blurb": "all the cool looking websites are behind paywalls for people to access, i am trying to democratize this and create a collection of awesome website templates with detailed prompts on how they are built so they can be redily adapted to your use case and can be customized."
     },
     {
       "repo": "gitscour",

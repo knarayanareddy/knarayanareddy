@@ -97,9 +97,9 @@ class KiranNarayanareddy:
 <div align="center">
 
 <!-- COUNTERS:START -->
-**38 live GitHub Pages sites** · **40 live deployments** · **159 original repositories** · **116 stars** · **8 forks** · **3 followers**
+**38 live GitHub Pages sites** · **40 live deployments** · **160 original repositories** · **116 stars** · **8 forks** · **3 followers**
 
-<sub>**TypeScript** 61 · **Python** 39 · **JavaScript** 14 · **HTML** 10 · **Rust** 4 · **Go** 2</sub>
+<sub>**TypeScript** 62 · **Python** 39 · **JavaScript** 15 · **HTML** 9 · **Rust** 4 · **Go** 2</sub>
 <!-- COUNTERS:END -->
 
 </div>
@@ -125,7 +125,6 @@ class KiranNarayanareddy:
 | 🌐 | [**AI-Daily**](https://knarayanareddy.github.io/AI-Daily/) · [source](https://github.com/knarayanareddy/AI-Daily) | `JavaScript` | ★ 1 | A calm, curated daily briefing for the AI ecosystem, built on a Scout → Challenge → Agree editorial model |
 | 🌐 | [**gitscour**](https://knarayanareddy.github.io/gitscour/) · [source](https://github.com/knarayanareddy/gitscour) | `Python` | ★ 1 | Queryable knowledge base of 50,000+ high-star GitHub repositories, sharded and served free from Pages |
 | 🌐 | [**Aerorepos**](https://knarayanareddy.github.io/Aerorepos/) · [source](https://github.com/knarayanareddy/Aerorepos) | `Python` | ★ 1 | Curated directory of open-source aerospace engineering projects — aero, propulsion, structures, GNC, space |
-| 🌐 | [**WebsitedesignandPrompts**](https://knarayanareddy.github.io/WebsitedesignandPrompts/) · [source](https://github.com/knarayanareddy/WebsitedesignandPrompts) | `HTML` | ★ 6 | Democratising the paywalled web: reusable landing-page templates with the full build prompts |
 | 🌐 | [**Bunqsy**](https://knarayanareddy.github.io/Bunqsy/) · [source](https://github.com/knarayanareddy/Bunqsy) | `TypeScript` | ★ 2 | Always-on financial guardian: 7-agent risk oracle, proactive interventions, nightly Dream Mode |
 <!-- LIVE_SITES:END -->
 
@@ -136,7 +135,7 @@ class KiranNarayanareddy:
 
 <a href="https://knarayanareddy.github.io/toolscour/"><img src="./assets/reels/toolscour.gif" alt="Recording of toolscour — 3D knowledge galaxy, recorded 2026-11-25" width="100%" /></a><sub><a href="https://knarayanareddy.github.io/toolscour/"><b>toolscour</b></a> — 3D knowledge galaxy · recorded 2026-11-25 · plays inline</sub>
 
-<details><summary><b>▶ 18 more recordings</b> <sub>(click a cover to play it in the reel player)</sub></summary>
+<details><summary><b>▶ 17 more recordings</b> <sub>(click a cover to play it in the reel player)</sub></summary>
 <table width="100%">
 <tr><td width="25%" align="center" valign="top">
 <a href="https://knarayanareddy.github.io/knarayanareddy/reel.html?r=3dexperimentation"><img src="./assets/reels/3dexperimentation-cover.png" alt="3dexperimentation — canvas film studio, recorded 2026-11-25. Opens the player." /></a>
@@ -189,14 +188,11 @@ class KiranNarayanareddy:
 </td></tr><tr><td width="25%" align="center" valign="top">
 <a href="https://knarayanareddy.github.io/knarayanareddy/reel.html?r=twitch-codex"><img src="./assets/reels/twitch-codex-cover.png" alt="twitch-codex — live-audience builds, recorded 2026-11-25. Opens the player." /></a>
 <sub><a href="https://knarayanareddy.github.io/knarayanareddy/reel.html?r=twitch-codex"><b>twitch-codex</b></a> ▶</sub>
-</td><td width="25%" align="center" valign="top">
-<a href="https://knarayanareddy.github.io/knarayanareddy/reel.html?r=WebsitedesignandPrompts"><img src="./assets/reels/WebsitedesignandPrompts-cover.png" alt="WebsitedesignandPrompts — landing-page templates, recorded 2026-11-25. Opens the player." /></a>
-<sub><a href="https://knarayanareddy.github.io/knarayanareddy/reel.html?r=WebsitedesignandPrompts"><b>WebsitedesignandPrompts</b></a> ▶</sub>
 </td></tr>
 </table>
 </details>
 
-<sub><b>Why the grid opens a player instead of playing here:</b> GitHub strips JavaScript from a README and strips <code>loading=lazy</code> from README images, so every image downloads and nothing can be started by a click. Playing all 20 inline would cost every visitor ~44 MB; this section costs ~440 kB of covers plus the two inline recordings. <a href="https://knarayanareddy.github.io/knarayanareddy/reel.html">Open the player</a> to browse all of them with hover previews. Each is captioned with its own date — none is a live feed.</sub>
+<sub><b>Why the grid opens a player instead of playing here:</b> GitHub strips JavaScript from a README and strips <code>loading=lazy</code> from README images, so every image downloads and nothing can be started by a click. Playing all 19 inline would cost every visitor ~41 MB; this section costs ~403 kB of covers plus the two inline recordings. <a href="https://knarayanareddy.github.io/knarayanareddy/reel.html">Open the player</a> to browse all of them with hover previews. Each is captioned with its own date — none is a live feed.</sub>
 <!-- REELS:END -->
 
 ### 📸 Every deployment, as it actually looks
@@ -240,6 +236,7 @@ class KiranNarayanareddy:
 
 | Live site | Stack |
 |-----------|-------|
+| [**FreeWebsitedesignandPrompts**](https://knarayanareddy.github.io/FreeWebsitedesignandPrompts/) | `HTML` |
 | [**SAAF-circuit-breaker**](https://knarayanareddy.github.io/SAAF-circuit-breaker/) | `TypeScript` |
 | [**hack-for-good**](https://knarayanareddy.github.io/hack-for-good/) | `TypeScript` |
 | [**benchmark**](https://knarayanareddy.github.io/benchmark/) | `TypeScript` |
@@ -255,13 +252,13 @@ class KiranNarayanareddy:
 | [**curiolab**](https://knarayanareddy.github.io/curiolab/) | `TypeScript` |
 | [**Nimbus**](https://knarayanareddy.github.io/Nimbus/) | `TypeScript` |
 | [**keepsake**](https://knarayanareddy.github.io/keepsake/) | `HTML` |
-| [**reflex-physical-ai**](https://knarayanareddy.github.io/reflex-physical-ai/) | `Python` |
 
 </td>
 <td width="50%" valign="top">
 
 | Live site | Stack |
 |-----------|-------|
+| [**reflex-physical-ai**](https://knarayanareddy.github.io/reflex-physical-ai/) | `Python` |
 | [**roomsmith**](https://knarayanareddy.github.io/roomsmith/) | `TypeScript` |
 | [**Agentcrash**](https://knarayanareddy.github.io/Agentcrash/) | `TypeScript` |
 | [**myjevuses**](https://knarayanareddy.github.io/myjevuses/) | `TypeScript` |
@@ -298,7 +295,7 @@ class KiranNarayanareddy:
 - 🚀 **[`toolscour`](https://github.com/knarayanareddy/toolscour)** — [live](https://knarayanareddy.github.io/toolscour/) · pushed 2026-11-25
 - 🛰️ **[`AI-Daily`](https://github.com/knarayanareddy/AI-Daily)** — [live](https://knarayanareddy.github.io/AI-Daily/) · pushed 2026-11-25
 - 🧠 **[`AI-Arsenal`](https://github.com/knarayanareddy/AI-Arsenal)** — [live](https://knarayanareddy.github.io/AI-Arsenal/) · pushed 2026-11-24
-- 🧪 **[`WebsitedesignandPrompts`](https://github.com/knarayanareddy/WebsitedesignandPrompts)** — [live](https://knarayanareddy.github.io/WebsitedesignandPrompts/) · pushed 2026-11-23
+- 🧪 **[`FreeWebsitedesignandPrompts`](https://github.com/knarayanareddy/FreeWebsitedesignandPrompts)** — [live](https://knarayanareddy.github.io/FreeWebsitedesignandPrompts/) · pushed 2026-11-23
 - 🔭 **[`gitscour`](https://github.com/knarayanareddy/gitscour)** — [live](https://knarayanareddy.github.io/gitscour/) · pushed 2026-11-18
 - ⚙️ **[`Aeroscribe`](https://github.com/knarayanareddy/Aeroscribe)** — [live](https://knarayanareddy.github.io/Aeroscribe/) · pushed 2026-11-13
 - 🛡️ **[`SAAF-circuit-breaker`](https://github.com/knarayanareddy/SAAF-circuit-breaker)** — [live](https://knarayanareddy.github.io/SAAF-circuit-breaker/) · pushed 2026-11-10
