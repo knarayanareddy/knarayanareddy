@@ -5,14 +5,14 @@
       "metric": "manuscript pipeline",
       "phase": 0.0,
       "captured": "2026-11-14T11:38:03Z",
-      "age_days": 12,
+      "age_days": 13,
       "confirmed_live": true
     },
     {
       "repo": "toolscour",
       "metric": "12,771 tools",
       "phase": 1.7,
-      "captured": "2026-11-25T14:39:47Z",
+      "captured": "2026-11-26T14:02:57Z",
       "age_days": 0,
       "confirmed_live": true
     },
@@ -21,7 +21,7 @@
       "metric": "50,000+ repos",
       "phase": 3.1,
       "captured": "2026-11-19T13:34:40Z",
-      "age_days": 7,
+      "age_days": 8,
       "confirmed_live": true
     },
     {
@@ -29,7 +29,7 @@
       "metric": "1,598 entries",
       "phase": 4.6,
       "captured": "2026-11-25T14:39:47Z",
-      "age_days": 0,
+      "age_days": 1,
       "confirmed_live": true
     },
     {
@@ -37,7 +37,7 @@
       "metric": "38 templates",
       "phase": 2.4,
       "captured": "2026-11-23T19:23:26Z",
-      "age_days": 2,
+      "age_days": 3,
       "confirmed_live": true
     },
     {
@@ -45,7 +45,7 @@
       "metric": "7-agent oracle",
       "phase": 5.8,
       "captured": "2026-11-04T12:19:37Z",
-      "age_days": 22,
+      "age_days": 23,
       "confirmed_live": false
     }
   ]
