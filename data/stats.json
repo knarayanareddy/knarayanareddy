@@ -1,10 +1,10 @@
 {
-  "generated": "2026-11-26",
-  "generated_at": "2026-11-26T16:53:00Z",
-  "window_days": 369,
-  "total_contributions": 5391,
-  "commits": 4600,
-  "pull_requests": 693,
+  "generated": "2026-11-27",
+  "generated_at": "2026-11-27T01:43:00Z",
+  "window_days": 370,
+  "total_contributions": 5423,
+  "commits": 4620,
+  "pull_requests": 705,
   "issues": 0,
   "repos_contributed": 154,
   "current_streak": 66,
@@ -17,7 +17,7 @@
     876,
     675,
     843,
-    662,
+    694,
     719,
     761,
     855
@@ -40,16 +40,16 @@
     71,
     45,
     36,
-    31,
-    21,
+    47,
+    22,
     20,
     25,
-    36,
-    26,
+    35,
+    29,
     7
   ],
   "hour_sample": {
-    "commits": 556,
+    "commits": 575,
     "days": 120,
     "repos": 14
   },
@@ -106,7 +106,7 @@
     694,
     240,
     175,
-    166
+    198
   ],
   "calendar": [
     {
@@ -1583,7 +1583,11 @@
     },
     {
       "date": "2026-11-26",
-      "count": 66
+      "count": 98
+    },
+    {
+      "date": "2026-11-27",
+      "count": 0
     }
   ],
   "languages": [
